@@ -17,7 +17,7 @@ const Xvfb = require("xvfb");
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
   await page.goto(`https://www.wildriftfire.com/tier-list`);
-  await page.screenshot({ path: "result.png", fullPage: true });
+  await page.screenshot({ path: "tierlist.png", fullPage: true });
   await browser.close();
   xvfb.stop();
 })();
