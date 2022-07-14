@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
    config.vm.box = "hashicorp/bionic64"
    config.vm.hostname = "enve-labs-docker-vm"
-   config.vm.network :public_network, bridge:""
+   config.vm.network "private_network", ip: "192.168.33.100"
    config.vm.network "forwarded_port", guest: 8080, host: 8080
 
    config.vm.synced_folder "./", "/home/vagrant/shared"
@@ -22,6 +22,9 @@ Vagrant.configure("2") do |config|
        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
        sudo apt-get update
        sudo apt-get install -y docker-ce
+      #  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      #  sudo apt-get install -y nodejs
+
    SHELL
 
 end
