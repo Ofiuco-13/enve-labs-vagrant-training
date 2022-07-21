@@ -50,7 +50,7 @@ const port = 3000;
     });
 
     await page.screenshot({ path: "event.png", fullPage: true });
-    console.log(`Tickets grabbed: ${grabTickets}`);
+    console.log(`Seats grabbed: ${grabTickets}`);
     fs.writeFile("./seats.json", JSON.stringify(grabTickets), (err) =>
       err ? console.log(err) : null
     );
